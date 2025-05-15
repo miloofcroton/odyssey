@@ -1,0 +1,5 @@
+// https://nitro.unjs.io/guide/typescript
+{
+  "extends": ["./.build/types/tsconfig.json"]
+  // "extends": ["./.build/types/tsconfig.json", "../tsconfig.json"]
+}

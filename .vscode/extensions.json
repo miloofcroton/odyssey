@@ -1,0 +1,19 @@
+{
+	"recommendations": [
+    "github.vscode-github-actions",
+    "firsttris.vscode-jest-runner",
+    "christian-kohler.npm-intellisense",
+    "yzhang.markdown-all-in-one",
+    "salbert.comment-ts",
+    "karlito40.fix-irregular-whitespace",
+    "formulahendry.auto-close-tag",
+    "wayou.vscode-todo-highlight",
+    "dbaeumer.vscode-eslint",
+    "formulahendry.auto-rename-tag",
+    "EditorConfig.EditorConfig",
+    "vscode.typescript-language-features",
+    "christian-kohler.path-intellisense",
+    "Zignd.html-css-class-completion",
+    "vscode.markdown-language-features",
+  ]
+}

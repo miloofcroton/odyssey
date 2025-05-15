@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^22",
+    "nitropack": "2.11.6",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.8"
+  },
+  "dependencies": {
+    "data": "0.0.1"
+  },
+  "scripts": {
+    "build": "nitro build",
+    "dev": "PORT=3000 nitro dev",
+    "prepare": "nitro prepare",
+    "preview": "node .output/server/index.mjs",
+    "test:unit": "vitest"
+  }
+}

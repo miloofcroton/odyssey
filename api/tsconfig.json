@@ -1,0 +1,38 @@
+// https://nitro.unjs.io/guide/typescript
+{
+  "extends": [
+    "../tsconfig.json",
+    // "./.build/types/tsconfig.json",
+  ],
+  "compilerOptions": {
+    // "types": [
+    //   "node",
+    //   "./.build/types/nitro-config.d.ts",
+    //   "./.build/types/nitro-routes.d.ts",
+    //   "./.build/types/nitro-imports.d.ts",
+    // ],
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noEmit": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "rootDirs": ["."],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ],
+    }
+  },
+  "include": [
+    // "./**/*",
+    "./src/**/*"
+  ]
+}

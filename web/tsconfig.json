@@ -1,0 +1,32 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": ["node", "vite/client"],
+    "target": "ES2022",
+    "module": "ES2022",
+
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+
+    "jsx": "react-jsx",
+
+    "rootDirs": [".", "./.react-router/types"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+    },
+  },
+  "include": [
+    "./**/*",
+    "./.server/**/*",
+    "./.client/**/*",
+    ".react-router/types/**/*"
+  ]
+}

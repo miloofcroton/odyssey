@@ -1,0 +1,55 @@
+{
+  "name": "odyssey",
+  "version": "1.0.0",
+  "workspaces": [
+    "web",
+    "ui",
+    "data",
+    "api",
+    "content"
+  ],
+  "volta": {
+    "node": "22.14.0",
+    "npm": "11.2.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.25.9",
+    "@eslint/js": "^9.17.0",
+    "@eslint/json": "^0.10.0",
+    "@eslint/markdown": "^6.2.2",
+    "@stylistic/eslint-plugin": "^2.12.1",
+    "@stylistic/eslint-plugin-js": "^2.12.1",
+    "@types/node": "22.13.0",
+    "eslint": "^9.21.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.10.0",
+    "eslint-plugin-jest-dom": "^5.5.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-package-json": "^0.18.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-testing-library": "^7.1.1",
+    "globals": "^15.14.0",
+    "lerna": "^8.1.9",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "build": "lerna run --parallel build",
+    "dev": "lerna run --parallel --scope '{web,api,content}' dev",
+    "dev:api": "lerna run dev --scope=api",
+    "dev:cms": "lerna run dev --scope=cms",
+    "dev:content": "lerna run dev --scope=content",
+    "dev:ui": "lerna run dev --scope=ui",
+    "dev:web": "lerna run dev --scope=web",
+    "dev:web": "lerna run dev --scope=web",
+    "lint": "eslint --config ./eslint.config.mjs .",
+    "lint:ci": "npm run lint -- --quiet",
+    "lint:fix": "npm run lint -- --fix",
+    "test:all": "npm run test --workspaces --if-present",
+    "test:changed": "lerna run test --since=origin/master"
+  }
+}
