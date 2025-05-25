@@ -1,6 +1,6 @@
 import { css } from '@linaria/core';
 
-const SITE_TITLE = 'Boilerplate 2025';
+const SITE_TITLE = 'Jack Toumey';
 
 const Title = () => (
   <h1 className={css`
