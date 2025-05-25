@@ -45,7 +45,6 @@
     "dev:content": "lerna run dev --scope=content",
     "dev:ui": "lerna run dev --scope=ui",
     "dev:web": "lerna run dev --scope=web",
-    "dev:web": "lerna run dev --scope=web",
     "lint": "eslint --config ./eslint.config.mjs .",
     "lint:ci": "npm run lint -- --quiet",
     "lint:fix": "npm run lint -- --fix",

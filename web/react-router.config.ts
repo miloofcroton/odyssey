@@ -7,6 +7,7 @@ import { mockCities } from 'data/src/cities/mocks';
 export default {
   appDirectory: 'src',
   buildDirectory: '.build',
+  // SPA mode by default, to enable server-side render mode set this to `true`
   ssr: false,
   prerender: async () => {
     const res = await fetch('http://localhost:3000/api/cities');

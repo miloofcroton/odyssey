@@ -25,7 +25,7 @@ const CityDetailRoute: React.FC<{
   const { city } = loaderData;
 
   return (
-    <main className={css`
+    <section className={css`
       display: flex;
       padding-bottom: 1rem;
       padding-top: 4rem;
@@ -83,7 +83,7 @@ const CityDetailRoute: React.FC<{
           </nav>
         </div>
       </div>
-    </main>
+    </section>
   );
 
 };

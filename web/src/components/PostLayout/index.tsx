@@ -5,38 +5,19 @@ const PostLayout: React.FC<{
 }> = ({ children, ...props }) => {
 
   return (
-    <main className={css`
-      display: flex;
-      padding-bottom: 1rem;
-      padding-top: 4rem;
-      justify-content: center;
-      align-items: center;
+    <section className={css`
+      span {
+        margin: 50px auto;
+        font-size: 30px;
+      }
+      p {
+        width: 60%;
+        text-align: left;
+        margin: 25px auto;
+      }
     `}>
-      <div className={css`
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 0%;
-        gap: 4rem;
-        align-items: center;
-        min-height: 0;
-      `}>
-        <header className={css`
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        `}>
-          <div className={css`
-            padding: 1rem;
-            width: 500px;
-            max-width: 100vw;
-          `}>
-            <h1>Posts Layout</h1>
-          </div>
-        </header>
-
-        {children}
-      </div>
-    </main>
+      {children}
+    </section>
   );
 };
 

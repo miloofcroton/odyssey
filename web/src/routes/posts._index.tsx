@@ -23,7 +23,7 @@ const CityMasterRoute: React.FC<{
   const { posts } = loaderData;
 
   return (
-    <main className={css`
+    <section className={css`
       display: flex;
       padding-bottom: 1rem;
       padding-top: 4rem;
@@ -63,7 +63,7 @@ const CityMasterRoute: React.FC<{
         </div>
 
       </div>
-    </main>
+    </section>
   );
 };
 

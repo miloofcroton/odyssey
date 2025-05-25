@@ -1,53 +1,57 @@
-import React from 'react'
+import '@testing-library/jest-dom';
+
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { http, HttpResponse } from 'msw';
+import { setupServer } from 'msw/node';
 import {
+  afterAll,
+  afterEach,
+  beforeAll,
   expect,
   test,
-  beforeAll,
-  afterEach,
-  afterAll,
-} from 'vitest'
-import {http, HttpResponse} from 'msw'
-import {setupServer} from 'msw/node'
-import {render, fireEvent, screen} from '@testing-library/react'
-import '@testing-library/jest-dom'
-import Fetch from './Fetch'
+} from 'vitest';
+
+import Fetch from './Fetch';
 
 const server = setupServer(
   http.get('/greeting', () => {
-    return HttpResponse.json({greeting: 'hello there'})
+    return HttpResponse.json({ greeting: 'hello there' });
   }),
-)
+);
 
-beforeAll(() => server.listen())
-afterEach(() => server.resetHandlers())
-afterAll(() => server.close())
+beforeAll(() => server.listen());
+
+afterEach(() => server.resetHandlers());
+
+afterAll(() => server.close());
 
 test('loads and displays greeting', async () => {
-  render(<Fetch url="/greeting" />)
+  render(<Fetch url="/greeting" />);
 
-  const getHeadingButtom = await screen.getByText('Load Greeting')
+  const getHeadingButtom = screen.getByText('Load Greeting');
 
-  fireEvent.click(getHeadingButtom)
+  fireEvent.click(getHeadingButtom);
 
-  await screen.findByRole('heading')
+  await screen.findByRole('heading');
 
-  expect(screen.getByRole('heading')).toHaveTextContent('hello there')
-  expect(screen.getByRole('button')).toBeDisabled()
-})
+  expect(screen.getByRole('heading')).toHaveTextContent('hello there');
+  expect(screen.getByRole('button')).toBeDisabled();
+});
 
 test('handles server error', async () => {
   server.use(
     http.get('/greeting', () => {
-      return new HttpResponse(null, {status: 500})
+      return new HttpResponse(null, { status: 500 });
     }),
-  )
+  );
 
-  render(<Fetch url="/greeting" />)
+  render(<Fetch url="/greeting" />);
 
-  fireEvent.click(screen.getByText('Load Greeting'))
+  fireEvent.click(screen.getByText('Load Greeting'));
 
-  await screen.findByRole('alert')
+  await screen.findByRole('alert');
 
-  expect(screen.getByRole('alert')).toHaveTextContent('Oops, failed to fetch!')
-  expect(screen.getByRole('button')).not.toBeDisabled()
-})
+  expect(screen.getByRole('alert')).toHaveTextContent('Oops, failed to fetch!');
+  expect(screen.getByRole('button')).toBeEnabled();
+});

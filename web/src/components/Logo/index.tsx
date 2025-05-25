@@ -17,7 +17,8 @@ export const Logo = ({
         ? css`
           display: block;
           width: 100%;
-        ` : css`
+        `
+        : css`
           display: none;
           width: 100%;
         `}

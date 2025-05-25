@@ -1,4 +1,4 @@
-import React, { useReducer,useState } from 'react';
+import React, { useReducer, useState } from 'react';
 
 const initialState = {
   error: null,

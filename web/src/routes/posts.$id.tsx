@@ -28,7 +28,7 @@ const CityDetailRoute: React.FC<{
   console.log({ post });
 
   return (
-    <main className={css`
+    <section className={css`
       display: flex;
       padding-bottom: 1rem;
       padding-top: 4rem;
@@ -76,7 +76,7 @@ const CityDetailRoute: React.FC<{
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </div>
-    </main>
+    </section>
   );
 
 };
