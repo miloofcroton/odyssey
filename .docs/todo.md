@@ -1,5 +1,11 @@
 # TODO
 
+layers:
+- content pipeline
+  - CMS?
+  - markdown in repo?
+- template
+
 first pages:
 - work page
 - play page
